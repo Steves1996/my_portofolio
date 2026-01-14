@@ -29,7 +29,7 @@ export function Hero() {
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
-              <a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
+              <a href="https://wa.me/237655261578" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
                 <Button size="lg" className="w-full sm:w-auto" leftIcon={<MessageCircle size={20} />}>
                   Me contacter sur WhatsApp
                 </Button>
@@ -44,7 +44,7 @@ export function Hero() {
 
             <div className="mt-12 flex items-center justify-center lg:justify-start gap-8 text-slate-500">
               <div className="flex flex-col">
-                <span className="text-2xl font-bold text-slate-900">5+</span>
+                <span className="text-2xl font-bold text-slate-900">6+</span>
                 <span className="text-sm">Années d'expérience</span>
               </div>
               <div className="w-px h-10 bg-slate-200"></div>
@@ -64,7 +64,7 @@ export function Hero() {
             <div className="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 mx-auto">
               <div className="absolute inset-0 bg-indigo-600 rounded-full opacity-10 blur-3xl transform translate-x-4 translate-y-4"></div>
               <div className="relative w-full h-full rounded-full border-4 border-white shadow-2xl overflow-hidden bg-slate-200">
-                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" alt="Portrait professionnel" className="w-full h-full object-cover" />
+                <img src="https://media.licdn.com/dms/image/v2/C4D03AQET8AHYh8k7DA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1569257278914?e=1770249600&v=beta&t=l0SJDGgEG-Ku6caI3fK4VigVl2XQ6iqYdo-eCrvBlwI" alt="Portrait professionnel" className="w-full h-full object-cover" />
               </div>
 
               {/* Floating Badge */}
@@ -75,7 +75,7 @@ export function Hero() {
                   </div>
                   <div>
                     <p className="text-xs text-slate-500 font-medium">
-                      CV Disponible
+                      CV Indisponible
                     </p>
                     <p className="text-sm font-bold text-slate-900">
                       Télécharger

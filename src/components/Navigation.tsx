@@ -48,7 +48,7 @@ export function Navigation() {
             {navItems.map(item => <a key={item.label} href={item.href} onClick={e => scrollToSection(e, item.href)} className="text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors">
                 {item.label}
               </a>)}
-            <a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer" className="px-4 py-2 text-sm font-medium text-white bg-slate-900 rounded-full hover:bg-slate-800 transition-colors">
+            <a href="https://wa.me/237655261578" target="_blank" rel="noopener noreferrer" className="px-4 py-2 text-sm font-medium text-white bg-slate-900 rounded-full hover:bg-slate-800 transition-colors">
               Me contacter
             </a>
           </div>

@@ -3,11 +3,11 @@ import { Briefcase, Calendar } from 'lucide-react';
 import { Card } from './ui/Card';
 const experiences = [{
   id: 1,
-  role: 'Développeur Senior Full Stack',
-  company: 'Tech Solutions Inc.',
-  period: '2021 - Présent',
-  description: "Direction technique de projets web complexes. Architecture de solutions scalables et encadrement d'une équipe de 3 développeurs juniors.",
-  tags: ['React', 'Node.js', 'AWS', 'Team Lead']
+  role: 'Développeur Senior Full Stack / Tech Lead',
+  company: 'Proditech Digital',
+  period: '2025 - Présent',
+  description: "Direction technique de projets web/mobile complexes. Architecture de solutions scalables et encadrement d'une équipe de 4 développeurs juniors.",
+  tags: ['React', 'Node.js', 'Nest js', 'Angular js','Coolify','Flutter','Team Lead']
 }, {
   id: 2,
   role: 'Développeur Front-end',
@@ -31,7 +31,7 @@ export function ExperienceSection() {
             Expérience Professionnelle
           </h2>
           <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-            Mon parcours dans le développement web et les projets sur lesquels
+            Mon parcours dans le développement web/mobile et les projets sur lesquels
             j'ai eu la chance de travailler.
           </p>
         </div>
