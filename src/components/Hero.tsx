@@ -25,7 +25,7 @@ export function Hero() {
             <p className="text-lg md:text-xl text-slate-600 mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
               Je transforme vos idées en expériences numériques performantes.
               Spécialisé dans la création d'interfaces modernes et
-              d'applications web robustes.
+              d'applications web/mobile/desktop robustes.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
