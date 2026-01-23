@@ -1,24 +1,18 @@
 import React from 'react';
 import { GraduationCap, Award } from 'lucide-react';
 import { Card } from './ui/Card';
-const education = [{
-  id: 1,
-  degree: 'Master en Ingénierie Informatique',
-  school: 'École Supérieure du Numérique',
-  year: '2018',
-  description: 'Spécialisation en architecture logicielle et développement web avancé.'
+const education = [ {
+  id:1,
+  degree: 'Licence Informatique',
+  school: 'Université de la cote (IUC)',
+  year: '2020-2021',
+  description: "Genie Logiciel - Cursus axé sur le développement web, les bases de données et les systèmes d'information. Projets pratiques incluant la création d'applications web, Mobile et desktop complètes."
 }, {
   id: 2,
-  degree: 'Licence Informatique',
-  school: 'Université des Sciences',
-  year: '2016',
-  description: "Fondamentaux de l'informatique, algorithmique et bases de données."
-}, {
-  id: 3,
-  degree: 'Baccalauréat Scientifique',
-  school: 'Lycée Victor Hugo',
-  year: '2013',
-  description: 'Option Mathématiques, Mention Bien.'
+  degree: 'DEC (Diplôme d’Études Collégiales) en Informatique',
+  school: 'Université de la cote (IUC)',
+  year: '2015-2017',
+  description: 'TI - Techniques de l’informatique - Formation axée sur les fondamentaux de l’informatique, y compris la programmation, les réseaux et la gestion des systèmes. Réalisation de projets pratiques en développement logiciel et administration réseau.'
 }];
 export function EducationSection() {
   return <section id="education" className="py-20 bg-slate-50">
@@ -41,10 +35,25 @@ export function EducationSection() {
                 <div>
                   <h4 className="font-bold text-slate-900">Certifications</h4>
                   <p className="text-sm text-slate-600 mt-1">
-                    AWS Certified Developer
+                    CISCO
                   </p>
                   <p className="text-sm text-slate-600">
-                    Google UX Design Certificate
+                    
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-white p-6 rounded-xl border border-slate-200 shadow-sm mt-6">
+              <div className="flex items-start gap-4">
+                <Award className="text-yellow-500 shrink-0 mt-1" />
+                <div>
+                  <h4 className="font-bold text-slate-900">Certifications</h4>
+                  <p className="text-sm text-slate-600 mt-1">
+                    Microsoft Databe
+                  </p>
+                  <p className="text-sm text-slate-600">
+                    SQL Server
                   </p>
                 </div>
               </div>

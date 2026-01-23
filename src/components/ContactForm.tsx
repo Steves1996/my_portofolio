@@ -1,41 +1,75 @@
-import React, { useState } from 'react';
-import { Send, CheckCircle, AlertCircle } from 'lucide-react';
-import { Button } from './ui/Button';
-import { Input } from './ui/Input';
-import { Textarea } from './ui/Textarea';
-import { Card } from './ui/Card';
+import React, { useState } from "react";
+import { Send, CheckCircle, AlertCircle } from "lucide-react";
+import { Button } from "./ui/Button";
+import { Input } from "./ui/Input";
+import { Textarea } from "./ui/Textarea";
+import { Card } from "./ui/Card";
+
 export function ContactForm() {
   const [formData, setFormData] = useState({
-    name: '',
-    phone: '',
-    description: ''
+    name: "",
+    phone: "",
+    description: "",
   });
-  const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
+  const [status, setStatus] = useState<
+    "idle" | "submitting" | "success" | "error"
+  >("idle");
   const [errors, setErrors] = useState<Record<string, string>>({});
+
   const validate = () => {
     const newErrors: Record<string, string> = {};
-    if (!formData.name.trim()) newErrors.name = 'Le nom est requis';
-    if (!formData.phone.trim()) newErrors.phone = 'Le numéro de téléphone est requis';
-    if (!formData.description.trim()) newErrors.description = 'La description du projet est requise';else if (formData.description.length < 10) newErrors.description = 'La description est trop courte';
+    if (!formData.name.trim()) newErrors.name = "Le nom est requis";
+    if (!formData.phone.trim())
+      newErrors.phone = "Le numéro de téléphone est requis";
+    if (!formData.description.trim())
+      newErrors.description = "La description du projet est requise";
+    else if (formData.description.length < 10)
+      newErrors.description = "La description est trop courte";
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!validate()) return;
-    setStatus('submitting');
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 1500));
-    setStatus('success');
+    setStatus("submitting");
+
+    // Préparer le message WhatsApp
+    const whatsappNumber = "237655261578"; // Numéro sans le +
+    const message =
+      `🔔 *Nouvelle demande de contact*\n\n` +
+      `👤 *Nom:* ${formData.name}\n` +
+      `📞 *Téléphone:* ${formData.phone}\n` +
+      `📝 *Description du projet:*\n${formData.description}`;
+
+    // Encoder le message pour l'URL
+    const encodedMessage = encodeURIComponent(message);
+
+    // Construire l'URL WhatsApp
+    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+
+    // Simuler un court délai pour l'expérience utilisateur
+    await new Promise((resolve) => setTimeout(resolve, 500));
+
+    // Ouvrir WhatsApp dans un nouvel onglet
+    window.open(whatsappUrl, "_blank");
+
+    setStatus("success");
     setFormData({
-      name: '',
-      phone: '',
-      description: ''
+      name: "",
+      phone: "",
+      description: "",
     });
+
     // Reset success message after 5 seconds
-    setTimeout(() => setStatus('idle'), 5000);
+    setTimeout(() => setStatus("idle"), 5000);
   };
-  return <section id="contact" className="py-20 bg-slate-900 text-white relative overflow-hidden">
+
+  return (
+    <section
+      id="contact"
+      className="py-20 bg-slate-900 text-white relative overflow-hidden"
+    >
       {/* Decorative elements */}
       <div className="absolute top-0 right-0 w-64 h-64 bg-indigo-600 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
       <div className="absolute bottom-0 left-0 w-64 h-64 bg-purple-600 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
@@ -64,16 +98,22 @@ export function ContactForm() {
                     <p className="text-sm text-slate-500 uppercase tracking-wider font-semibold mb-1">
                       Email
                     </p>
-                    <a href="mailto:contact@portfolio.com" className="text-white hover:text-indigo-400 transition-colors">
-                      contact@portfolio.com
+                    <a
+                      href="mailto:steveskamdem6@gmail.com"
+                      className="text-white hover:text-indigo-400 transition-colors"
+                    >
+                      steveskamdem6@gmail.com
                     </a>
                   </div>
                   <div>
                     <p className="text-sm text-slate-500 uppercase tracking-wider font-semibold mb-1">
                       Téléphone / WhatsApp
                     </p>
-                    <a href="tel:+1234567890" className="text-white hover:text-indigo-400 transition-colors">
-                      +123 456 7890
+                    <a
+                      href="tel:+237655261578"
+                      className="text-white hover:text-indigo-400 transition-colors"
+                    >
+                      +237 655 261 578 / +237 681 444 282
                     </a>
                   </div>
                   <div>
@@ -81,7 +121,7 @@ export function ContactForm() {
                       Localisation
                     </p>
                     <p className="text-white">
-                      Paris, France (Télétravail possible)
+                      Douala, Cameroun (Télétravail possible)
                     </p>
                   </div>
                 </div>
@@ -90,7 +130,8 @@ export function ContactForm() {
 
             {/* Form Side */}
             <Card className="md:col-span-3 bg-white text-slate-900 p-6 md:p-8 shadow-xl">
-              {status === 'success' ? <div className="text-center py-12">
+              {status === "success" ? (
+                <div className="text-center py-12">
                   <div className="inline-flex items-center justify-center w-16 h-16 bg-green-100 text-green-600 rounded-full mb-4">
                     <CheckCircle size={32} />
                   </div>
@@ -101,32 +142,71 @@ export function ContactForm() {
                     Merci de m'avoir contacté. Je reviendrai vers vous dans les
                     plus brefs délais.
                   </p>
-                  <Button variant="outline" className="mt-6" onClick={() => setStatus('idle')}>
+                  <Button
+                    variant="outline"
+                    className="mt-6"
+                    onClick={() => setStatus("idle")}
+                  >
                     Envoyer un autre message
                   </Button>
-                </div> : <form onSubmit={handleSubmit} className="space-y-6">
-                  <Input label="Nom du client" placeholder="Votre nom ou celui de votre entreprise" value={formData.name} onChange={e => setFormData({
-                ...formData,
-                name: e.target.value
-              })} error={errors.name} />
+                </div>
+              ) : (
+                <form onSubmit={handleSubmit} className="space-y-6">
+                  <Input
+                    label="Nom du client"
+                    placeholder="Votre nom ou celui de votre entreprise"
+                    value={formData.name}
+                    onChange={(e) =>
+                      setFormData({
+                        ...formData,
+                        name: e.target.value,
+                      })
+                    }
+                    error={errors.name}
+                  />
 
-                  <Input label="Numéro de téléphone" type="tel" placeholder="+33 6 12 34 56 78" value={formData.phone} onChange={e => setFormData({
-                ...formData,
-                phone: e.target.value
-              })} error={errors.phone} />
+                  <Input
+                    label="Numéro de téléphone"
+                    type="tel"
+                    placeholder="+33 6 12 34 56 78"
+                    value={formData.phone}
+                    onChange={(e) =>
+                      setFormData({
+                        ...formData,
+                        phone: e.target.value,
+                      })
+                    }
+                    error={errors.phone}
+                  />
 
-                  <Textarea label="Description du projet" placeholder="Décrivez brièvement vos besoins..." value={formData.description} onChange={e => setFormData({
-                ...formData,
-                description: e.target.value
-              })} error={errors.description} />
+                  <Textarea
+                    label="Description du projet"
+                    placeholder="Décrivez brièvement vos besoins..."
+                    value={formData.description}
+                    onChange={(e) =>
+                      setFormData({
+                        ...formData,
+                        description: e.target.value,
+                      })
+                    }
+                    error={errors.description}
+                  />
 
-                  <Button type="submit" className="w-full" size="lg" isLoading={status === 'submitting'} rightIcon={<Send size={18} />}>
+                  <Button
+                    type="submit"
+                    className="w-full"
+                    size="lg"
+                    isLoading={status === "submitting"}
+                    rightIcon={<Send size={18} />}
+                  >
                     Envoyer la demande
                   </Button>
-                </form>}
+                </form>
+              )}
             </Card>
           </div>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 }

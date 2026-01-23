@@ -1,12 +1,8 @@
 import React from 'react';
-import { Camera, Music, Plane, BookOpen } from 'lucide-react';
+import { Camera, Music, Plane, BookOpen, BadgeDollarSign } from 'lucide-react';
 import { Card } from './ui/Card';
 const hobbies = [{
-  name: 'Photographie',
-  icon: <Camera size={32} />,
-  description: 'Capturer des moments urbains et des paysages naturels lors de mes voyages.'
-}, {
-  name: 'Musique',
+  name: 'Danse',
   icon: <Music size={32} />,
   description: 'Pratique de la guitare et production musicale amateur sur MAO.'
 }, {
@@ -14,9 +10,13 @@ const hobbies = [{
   icon: <Plane size={32} />,
   description: 'Découverte de nouvelles cultures. 15 pays visités à ce jour.'
 }, {
-  name: 'Lecture',
+  name: 'Lecture & Dialogue',
   icon: <BookOpen size={32} />,
   description: "Passionné de science-fiction et d'ouvrages sur le développement personnel."
+},{
+  name: 'Football',
+  icon: <BadgeDollarSign size={32} />,
+  description: "Passionné de football et de sports en général."
 }];
 export function HobbiesSection() {
   return <section className="py-20 bg-slate-50">

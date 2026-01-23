@@ -8,7 +8,7 @@ const skills = [{
   level: 90,
   color: 'bg-cyan-400'
 }, {
-  name: 'Node.js & Express',
+  name: 'Node.js & Express & NestJS',
   level: 85,
   color: 'bg-green-500'
 }, {
@@ -17,12 +17,22 @@ const skills = [{
   color: 'bg-orange-500'
 }, {
   name: 'Python / Django',
-  level: 75,
+  level: 20,
   color: 'bg-blue-500'
 }, {
   name: 'SQL / NoSQL',
   level: 80,
   color: 'bg-purple-500'
+},
+ {
+  name: 'Flutter',
+  level: 95,
+  color: 'bg-blue-500'
+},
+ {
+  name: 'React Native',
+  level: 60,
+  color: 'bg-gray-500'
 }];
 export function SkillsSection() {
   return <section id="skills" className="py-20 bg-slate-900 text-white">
