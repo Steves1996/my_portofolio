@@ -33,6 +33,11 @@ const skills = [{
   name: 'React Native',
   level: 60,
   color: 'bg-gray-500'
+},
+ {
+  name: 'WordPress',
+  level: 60,
+  color: 'bg-gray-500'
 }];
 export function SkillsSection() {
   return <section id="skills" className="py-20 bg-slate-900 text-white">

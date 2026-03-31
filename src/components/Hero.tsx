@@ -64,7 +64,7 @@ export function Hero() {
             <div className="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 mx-auto">
               <div className="absolute inset-0 bg-indigo-600 rounded-full opacity-10 blur-3xl transform translate-x-4 translate-y-4"></div>
               <div className="relative w-full h-full rounded-full border-4 border-white shadow-2xl overflow-hidden bg-slate-200">
-                <img src="https://media.licdn.com/dms/image/v2/C4D03AQET8AHYh8k7DA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1569257278914?e=1770249600&v=beta&t=l0SJDGgEG-Ku6caI3fK4VigVl2XQ6iqYdo-eCrvBlwI" alt="Portrait professionnel" className="w-full h-full object-cover" />
+                <img src="https://media.licdn.com/dms/image/v2/C4D03AQET8AHYh8k7DA/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1569257278794?e=1776297600&v=beta&t=KN4zYobZrBMcKNjQ9Ip6xIO9tu-k7dZSTJZtpcm7CvU" alt="Portrait professionnel" className="w-full h-full object-cover" />
               </div>
 
               {/* Floating Badge */}
